@@ -1,0 +1,5 @@
+{
+  "timeline": "10:14:02 - browser: opened https://stripe.com/docs/api/payment_intents/create\n10:15:40 - browser: opened https://stripe.com/docs/connect/direct-charges\n10:17:12 - editor: edited payment.ts, function createPaymentIntent, lines 38-52\n10:17:45 - editor: edited payment.ts, added stripe.paymentIntents.create call with 'stripeAccount' header\n10:18:03 - terminal: ran `npm run dev`\n10:18:30 - terminal: made a test checkout request via curl to localhost:3000/api/checkout",
+  "code": "// payment.ts\nasync function createPaymentIntent(amount: number, connectedAccountId: string) {\n  const paymentIntent = await stripe.paymentIntents.create(\n    {\n      amount,\n      currency: 'usd',\n    },\n    {\n      stripeAccount: connectedAccountId,\n    }\n  );\n  return paymentIntent;\n}",
+  "error": "Error: unable to verify the first certificate\n    at TLSSocket.onConnectSecure (node:_tls_wrap:1663:34)\n    at TLSSocket.emit (node:events:519:28)\n    ... 7 lines matching cause stack trace ...\n    at connectPaymentIntent (payment.ts:41:23)"
+}
