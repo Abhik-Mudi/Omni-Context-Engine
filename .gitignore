@@ -1,0 +1,99 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+backend/omnienv/
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+share/python-wheels/
+*.whl
+
+# Frontend dependencies and build output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+.pnp.*
+.next/
+.nuxt/
+.vite/
+coverage/
+out/
+storybook-static/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+*.secrets
+secrets/
+
+# Runtime data and generated reports
+data/*
+!data/.gitkeep
+results.jsonl
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.log
+logs/
+tmp/
+temp/
+
+# Jupyter and local tooling
+.ipynb_checkpoints/
+.python-version
+.direnv/
+
+# Operating system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# Editors and local workspace settings
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# Temporary and test artifacts
+*.tmp
+*.temp
+*.bak
+test-results/
+playwright-report/
+blob-report/
