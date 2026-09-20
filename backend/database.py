@@ -13,8 +13,10 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 # 4. Define the exact path to the database file
 DB_PATH = DATA_DIR / "omni.db"
 
+
 def get_db_connection():
     return sqlite3.connect(DB_PATH)
+
 
 def init_db():
     # connects to a local database file
@@ -22,18 +24,19 @@ def init_db():
     cursor = con.cursor()
 
     # creates a timeline_events table to store the events
-    cursor.execute('''
+    cursor.execute("""
         CREATE TABLE IF NOT EXISTS timeline_events(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
             source TEXT NOT NULL,
             payload TEXT NOT NULL
         )
-    ''')
+    """)
 
     con.commit()
     con.close()
     print("Omni db created")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     init_db()
