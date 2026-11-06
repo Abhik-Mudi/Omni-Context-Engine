@@ -14,22 +14,24 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 DB_PATH = DATA_DIR / "omni.db"
 
 
+# Get the db connection 
 def get_db_connection():
     return sqlite3.connect(DB_PATH)
 
 
 def init_db():
-    # connects to a local database file
+    # Connect to a local database file
     con = get_db_connection()
     cursor = con.cursor()
 
-    # creates a timeline_events table to store the events
+    # Create a timeline_events table to store the events
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS timeline_events(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
             source TEXT NOT NULL,
-            payload TEXT NOT NULL
+            payload TEXT NOT NULL,
+            ai_analysis TEXT NULL
         )
     """)
 
